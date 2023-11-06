@@ -1,19 +1,21 @@
 
 .conten {
-    display: flex; 
+   margin-top: 50px;
     align-items: center; 
 }
 
 .conten h1 {
     margin-right: 20px; 
+    text-align: center;
 }
 
 .add {
-    margin-right: 50px
+    margin-right: 50px;
+    margin-left:50px;
 }
 
 .add button {
-    background-color: #007bff;
+    background-color: rgb(22, 93, 170);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -22,5 +24,6 @@
 
 
 .content {
+    text-align: center;
     margin-top: 20px;
 }
