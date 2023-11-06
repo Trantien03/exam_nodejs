@@ -8,15 +8,6 @@ exports.postProduct= function(req,res){
     const data = req.body;
 
        try {
-        if(req.file){
-            const file = req.file;
-            const fq = require("fs");
-            const img = fq.readFileSync(file.path);
-            data.thumbnail ={
-                contentType: file.mimetype,
-                data: img.toString("base64")
-            }
-        }
        const u = new productModel(data);
        u.save();
     
@@ -24,6 +15,20 @@ exports.postProduct= function(req,res){
        } catch (error) {
         return res.send(error)
     }
-
 }
- 
+exports.deleteProduct = async (req, res) => {
+    const productId = req.params.id;
+    console.log(productId);
+    try {
+      const deletedProduct = await productModel.findByIdAndDelete(productId);
+  
+      if (!deletedProduct) {
+        return res.send("Product not found");
+      }
+  
+      res.send("Product deleted successfully");
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    }
+};
