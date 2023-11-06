@@ -39,23 +39,13 @@
                              <td><%- product.productOriginPrice %></td>
                              <td><%- product.quantity %></td>
                              <td><%- product.productStoreCode %></td>
-
                             <td>
-                               
-                                <button class="btn btn-danger mx-2" onclick="">Delete</button>
+                                <a href="/auth/product/delete/<%= product._id %>" class="btn btn-danger btn-sm">Delete</a>
                               </td>
-                              
                         </tr>
-                       
-
                     <% }) %>
-                        
-    
                 </tbody>
         </table>
-        
       </section>
 </body>
-
-
 </html>
